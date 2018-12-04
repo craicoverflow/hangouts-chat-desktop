@@ -1,1 +1,52 @@
-{"name":"hangouts-chat-nativefier-c476a8","version":"1.0.0","description":"Placeholder for the nativefier cli to override with a target url","main":"lib/main.js","dependencies":{"electron-context-menu":"^0.10.0","electron-dl":"^1.10.0","electron-window-state":"^4.1.1","loglevel":"^1.5.1","source-map-support":"^0.5.0","wurl":"^2.5.2"},"devDependencies":{},"scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":["desktop","electron"],"author":"Jia Hao","license":"MIT"}
+{
+    "name": "hangouts-chat",
+    "version": "0.0.1",
+    "description": "Unofficial Linux desktop client for Google Hangouts Chat",
+    "main": "lib/main.js",
+    "build": {
+        "appId": "me.endaphelan.${hangouts-chat}",
+        "mac": {
+            "category": "public.app-category.communication"
+        },
+        "nsis": {
+            "createDesktopShortcut": "always"
+        },
+        "dmg": {
+            "contents": [
+                {
+                    "x": 110,
+                    "y": 150
+                },
+                {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        },
+        "linux": {
+            "category": "Communication"
+        }
+    },
+    "devDependencies": {
+        "electron": "3.0.7",
+        "electron-builder": "^20.31.2",
+        "rimraf": "^2.6.2",
+        "typescript": "^3.2.1"
+    },
+    "scripts": {
+        "postinstall": "electron-builder install-app-deps",
+        "start": "yarn install && yarn compile && electron ./app",
+        "compile": "rimraf app/out && tsc",
+        "pack": "yarn compile && electron-builder --dir",
+        "dist": "yarn compile && electron-builder",
+        "release": "yarn compile && electron-builder"
+    },
+    "keywords": [
+        "desktop",
+        "electron"
+    ],
+    "author": "Jia Hao",
+    "license": "MIT"
+}
