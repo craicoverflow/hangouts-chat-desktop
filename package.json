@@ -1,10 +1,10 @@
 {
     "name": "hangouts-chat",
-    "version": "0.0.1",
-    "description": "Unofficial Linux desktop client for Google Hangouts Chat",
+    "version": "1.0.0",
+    "description": "Unofficial desktop client for Google Hangouts Chat",
     "main": "lib/main.js",
     "build": {
-        "appId": "me.endaphelan.${hangouts-chat}",
+        "appId": "me.endaphelan.${name}",
         "mac": {
             "category": "public.app-category.communication"
         },
@@ -32,12 +32,15 @@
     "devDependencies": {
         "electron": "3.0.7",
         "electron-builder": "^20.31.2",
+        "electron-installer-redhat": "^0.5.0",
         "rimraf": "^2.6.2",
         "typescript": "^3.2.1"
     },
     "scripts": {
+        "start": "yarn install && yarn compile && electron .",
+        "build": "electron-packager . hangouts-chat --platform linux --arch x64 --out dist/",
+        "rpm64": "electron-installer-redhat --src dist/hangouts-chat-linux-x64/ --arch x86_64 --config config.json",
         "postinstall": "electron-builder install-app-deps",
-        "start": "yarn install && yarn compile && electron ./app",
         "compile": "rimraf app/out && tsc",
         "pack": "yarn compile && electron-builder --dir",
         "dist": "yarn compile && electron-builder",
@@ -45,8 +48,10 @@
     },
     "keywords": [
         "desktop",
-        "electron"
+        "electron",
+        "google",
+        "hangouts"
     ],
-    "author": "Jia Hao",
+    "author": "Enda Phelan",
     "license": "MIT"
 }

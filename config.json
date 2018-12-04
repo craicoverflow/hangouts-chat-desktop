@@ -1,0 +1,8 @@
+{
+    "productName": "Hangouts Chat",
+    "dest": "dist/installers/",
+    "icon": "resources/Icon.png",
+    "categories": [
+        "Communication"
+    ]
+}
