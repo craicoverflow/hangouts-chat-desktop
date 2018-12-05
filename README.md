@@ -22,4 +22,4 @@ $ rpm -i hangouts-chat-1.0.0.x86_64.rpm
 
 ### Others
 
-For now I have not package this for other distros, but I can on request. If you want you can do this yourself by cloning this repo.
+I have not packaged this for other distros, but I can on request. If you want you can do this yourself by cloning this repo.
