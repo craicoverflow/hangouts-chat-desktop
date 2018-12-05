@@ -1,6 +1,6 @@
 {
     "name": "hangouts-chat",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Unofficial desktop client for Google Hangouts Chat",
     "main": "lib/main.js",
     "build": {
@@ -28,6 +28,16 @@
         "linux": {
             "category": "Communication"
         }
+    },
+    "linux": {
+        "target": [
+            "AppImage",
+            "snap",
+            "deb",
+            "rpm"
+        ],
+        "icon": "icon.png",
+        "category": "Communication"
     },
     "devDependencies": {
         "electron": "3.0.7",
