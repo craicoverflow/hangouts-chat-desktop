@@ -10,7 +10,7 @@
     "build": {
         "appId": "me.endaphelan.${name}",
         "mac": {
-            "category": "public.app-category.communication"
+            "category": "public.app-category.utility"
         },
         "nsis": {
             "createDesktopShortcut": "always"
@@ -30,7 +30,7 @@
             ]
         },
         "linux": {
-            "category": "Communication"
+            "category": "Utility"
         }
     },
     "linux": {
@@ -42,7 +42,7 @@
             "rpm"
         ],
         "icon": "icon.png",
-        "category": "Communication"
+        "category": "Utility"
     },
     "devDependencies": {
         "electron": "3.0.7",
@@ -54,7 +54,7 @@
     },
     "scripts": {
         "start": "yarn install && yarn compile && electron .",
-        "build": "electron-packager . hangouts-chat-desktop --platform linux --arch x64 --out dist/",
+        "build": "electron-packager . hangouts-chat-desktop --platform linux --arch x64 --overwrite force --out dist/",
         "rpm64": "electron-installer-redhat --config config.json",
         "postinstall": "electron-builder install-app-deps",
         "compile": "rimraf app/out && tsc",
