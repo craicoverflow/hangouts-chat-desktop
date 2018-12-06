@@ -1,7 +1,14 @@
 {
+    "name": "hangouts-chat-desktop",
+    "description": "Unofficial desktop client for Google Hangouts Chat",
+    "version": "1.0.1",
+    "license": "MIT",
     "productName": "Hangouts Chat",
+    "src": "dist/hangouts-chat-desktop-linux-x64/",
     "dest": "dist/installers/",
+    "arch": "x86_64",
     "icon": "icon.png",
+    "homepage": "https://github.com/craicoverflow/hangouts-chat-desktop",
     "categories": [
         "Communication"
     ]
