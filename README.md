@@ -31,6 +31,6 @@ $ chmod u+x hangouts-chat-desktop.1.0.1.AppImage
 
 After that you can run it by simply double-clicking on the file. Simples!
 
-### Contributing
+## Contributing
 
 Feel free to submit PRs and issues you find 😊
